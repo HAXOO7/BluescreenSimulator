@@ -223,6 +223,26 @@
 						</Grid>
 					</ScrollViewer>
 				</DataTemplate>
+				<DataTemplate DataType="{x:Type viewModels:Windows11BluescreenViewModel}">
+					<ScrollViewer VerticalScrollBarVisibility="Auto">
+						<Grid Margin="8">
+							<Grid.ColumnDefinitions><ColumnDefinition Width="170"/><ColumnDefinition Width="10"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Label Content="Main message"/><TextBox Grid.Column="2" Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}"/>
+							<Label Grid.Row="1" Content="Stop code"/><TextBox Grid.Row="1" Grid.Column="2" Text="{Binding StopCode, UpdateSourceTrigger=PropertyChanged}"/>
+							<Label Grid.Row="2" Content="Hex code"/><TextBox Grid.Row="2" Grid.Column="2" Text="{Binding HexCode, UpdateSourceTrigger=PropertyChanged}"/>
+							<Label Grid.Row="3" Content="What failed / driver"/><TextBox Grid.Row="3" Grid.Column="2" Text="{Binding FaultyDriver, UpdateSourceTrigger=PropertyChanged}"/>
+							<Label Grid.Row="4" Content="Text delay (seconds)"/><TextBox Grid.Row="4" Grid.Column="2" Text="{Binding TextDelay}"/>
+							<Label Grid.Row="5" Content="Progress duration (seconds)"/><TextBox Grid.Row="5" Grid.Column="2" Text="{Binding ProgressDuration}"/>
+							<Label Grid.Row="6" Content="Auto-close after (seconds)"/><TextBox Grid.Row="6" Grid.Column="2" Text="{Binding AutoCloseSeconds}"/>
+							<CheckBox Grid.Row="7" Grid.Column="2" Content="Show mouse cursor" IsChecked="{Binding ShowMouse}" Margin="4"/>
+							<CheckBox Grid.Row="8" Grid.Column="2" Content="Full-screen mode" IsChecked="{Binding FullScreen}" Margin="4"/>
+							<CheckBox Grid.Row="9" Grid.Column="2" Content="Automatically close" IsChecked="{Binding AutoClose}" Margin="4"/>
+						</Grid>
+					</ScrollViewer>
+				</DataTemplate>
 			</TabControl.Resources>
 		</TabControl>
 

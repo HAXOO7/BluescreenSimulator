@@ -40,3 +40,14 @@ For a tutorial on how to exclude this program from your antivirus so it can run 
 	- `git commit -m "Commit message explaining your changes"`
 	- `git push`
 - When you're done, create a Pull Request from your repository to this repository's master branch.
+
+
+## Windows 11 24H2+ Black Stop-Error Simulation (Fork addition)
+
+This fork adds a separate **Windows 11 Black (24H2+)** tab. The layout follows Microsoft's published Windows 11 24H2+ stop-error reference: centered restart message and completion percentage, with the stop code (including its hexadecimal value) and optional faulting module centered near the bottom. The new screen omits the legacy frowny face and QR code.
+
+Configurable fields include the main message, stop code, hexadecimal code, faulting driver/module, text delay, progress duration, mouse cursor visibility, full-screen/windowed mode, and optional timed auto-close. The default values mirror Microsoft's published example (`CRITICAL_PROCESS_DIED`, `0xEF`, `rdbyss.sys`).
+
+The new screen is an ordinary WPF window simulation. It does not issue a bugcheck, change system settings, install drivers/services, or add a global keyboard hook. Press **F7** or **Esc** while the new screen is focused to exit. Existing Windows 10, Windows 7, and Windows 9x screens are retained.
+
+Microsoft reference: https://techcommunity.microsoft.com/blog/windows-itpro-blog/resilience-in-action-for-windows-devices/4434571

@@ -126,6 +126,7 @@
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Models\BluescreenBase.cs" />
     <Compile Include="Models\Windows7Bluescreen.cs" />
+    <Compile Include="Models\Windows11Bluescreen.cs" />
     <Compile Include="Models\Windows9xBluescreen.cs" />
     <Compile Include="Properties\Windows10BluescreenResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -148,9 +149,13 @@
     <Compile Include="ViewModels\IBluescreenViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Windows10BluescreenViewModel.cs" />
+    <Compile Include="ViewModels\Windows11BluescreenViewModel.cs" />
     <Compile Include="ViewModels\Windows9xBluescreenViewModel.cs" />
     <Compile Include="Views\BlackWindow.xaml.cs">
       <DependentUpon>BlackWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows11BlackScreenWindow.xaml.cs">
+      <DependentUpon>Windows11BlackScreenWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BluescreenWindow9x.xaml.cs">
       <DependentUpon>BluescreenWindow9x.xaml</DependentUpon>
@@ -193,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BlackWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows11BlackScreenWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

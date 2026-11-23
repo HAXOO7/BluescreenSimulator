@@ -25,7 +25,8 @@ namespace BluescreenSimulator.ViewModels
         {
             new Windows10BluescreenViewModel(),
             new Windows7BluescreenViewModel(),
-            new Windows9xBluescreenViewModel()
+            new Windows9xBluescreenViewModel(),
+            new Windows11BluescreenViewModel()
         };
 
         public DelegateCommand ResetAllCommand { get; }
