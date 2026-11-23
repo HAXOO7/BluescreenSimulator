@@ -1,0 +1,49 @@
+name: Build BluescreenSimulator
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build Release
+        shell: pwsh
+        run: |
+          msbuild BluescreenSimulator.sln `
+            /m `
+            /p:Configuration=Release `
+            /p:Platform="Any CPU" `
+            /p:RestorePackages=false `
+            /verbosity:minimal
+
+      - name: Verify executable
+        shell: pwsh
+        run: |
+          $exe = "BluescreenSimulator/bin/Release/BluescreenSimulator.exe"
+          if (!(Test-Path $exe)) {
+            throw "Build failed: executable not found."
+          }
+          Get-Item $exe | Format-List Name,Length,FullName
+
+      - name: Upload Release
+        uses: actions/upload-artifact@v4
+        with:
+          name: BluescreenSimulator-3.4.0-Windows
+          path: |
+            BluescreenSimulator/bin/Release/
+          if-no-files-found: error
+          retention-days: 30
