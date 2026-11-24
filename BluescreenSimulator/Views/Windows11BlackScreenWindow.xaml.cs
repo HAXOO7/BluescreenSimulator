@@ -70,7 +70,7 @@ namespace BluescreenSimulator.Views
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.F7 || e.Key == Key.Escape)
+            if (e.Key == Key.F7)
             {
                 e.Handled = true;
                 CloseSafely();

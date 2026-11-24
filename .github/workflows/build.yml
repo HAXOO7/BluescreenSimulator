@@ -88,7 +88,7 @@ jobs:
 
           Run BluescreenSimulator.exe. Keep all files in this folder together.
           Windows 11 24H2+ black stop-error simulation is available as a separate tab.
-          F7 or Escape exits the new Windows 11 simulation.
+          F7 exits the new Windows 11 simulation (Escape is intentionally disabled).
           This is a normal WPF window simulation; it does not trigger a system bugcheck.
           "@ | Set-Content (Join-Path $package "README-Windows11.txt") -Encoding UTF8
           Compress-Archive -Path (Join-Path $package '*') -DestinationPath (Join-Path $env:RUNNER_TEMP "BluescreenSimulator-Windows11-Edition.zip") -Force
